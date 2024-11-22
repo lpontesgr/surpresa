@@ -1,0 +1,87 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão com Lista</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Dancing Script', cursive;
+            background: url('https://source.unsplash.com/1920x1080/?romantic,scenery') no-repeat center center;
+            background-size: cover;
+        }
+        div {
+            text-align: center;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background: linear-gradient(45deg, #ff6b6b, #d14747);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Dancing Script', cursive;
+            font-size: 5em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        ul {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0 0;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1s ease-out forwards;
+        }
+        ul li {
+            margin: 10px 0;
+            color: black;
+            font-size: 5em;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <button onclick="toggleList()">Próxima parada</button>
+        <ul id="lista">
+            <li>Saia pelo portão da secretaria.</li>
+            <li>Siga na Voluntários da Pátria até a Zooloja.</li>
+            <li>Dobre à sua esquerda e entre no primeiro prédio rosa que encontrar.</li>
+            <li>Entre neste prédio e busque uma entrega para Camilla.</li>
+            <li>Em caso de dúvida...ficará sem a surpresa. 😛</li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleList() {
+            const lista = document.getElementById('lista');
+            if (lista.style.display === 'none' || lista.style.display === '') {
+                lista.style.display = 'block';
+            } else {
+                lista.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
